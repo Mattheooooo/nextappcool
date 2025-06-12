@@ -7,7 +7,8 @@ Bienvenue dans **NextAppCool**, un projet web développé avec **Next.js**, cré
 
 ##  Objectif du projet
 
-Créer une application Next.js de A à Z, comprendre son fonctionnement, et la lier à un dépôt GitHub .
+Créer une application Next.js de A à Z, comprendre son fonctionnement, et la lier à un dépôt GitHub.
+
 ---
 
 ##  À propos de moi
@@ -42,11 +43,10 @@ git push -u origin master
 ---
 
 
-
 ## ▶️ Lancer le projet en local
 
 ```bash
-# Installer les dépendances
+# Installer les dépendances si besoin
 npm install
 
 # Lancer le serveur de développement
@@ -68,7 +68,7 @@ Le projet sera accessible sur :
 next-learn/
 ├── pages/             # Pages principales (Next.js routing etc c'est chiant)
 ├── public/            # Fichiers statiques
-├── styles/            # Fichiers CSS
+├── styles/            # Fichiers CSS ( OUAIIIIS )
 ├── node_modules/      # Modules installés
 ├── package.json       # Infos projet et dépendances
 └── README.md          # Ce fichier
@@ -81,13 +81,13 @@ next-learn/
 Ce projet est open-source, sans licence restrictive pour le moment.
 Utilisation libre à des fins pédagogiques svp vous pouvez me tag.
 
----
+
 
 ##  Remerciements
 
 Merci à moi-même, à moi, moi, à Next.js et à GitHub.  
 Ce projet, c’est aussi un entraînement pour des projets plus ambitieux à venir... ( 'fin je crois )
 
----
+
 
 ## blablabla blebleble blublublu
