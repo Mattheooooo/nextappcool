@@ -7,98 +7,116 @@ import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+// importation (commentée) si tu actives les cartes plus tard
+// import { Card } from '@/app/ui/dashboard/cards';
+// import RevenueChart from '@/app/ui/dashboard/revenue-chart';
+// import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 
 const navButtons = [
-  { name: 'Home', href: '/dashboard' },
-  { name: 'Invoices', href: '/dashboard/invoices' },
-  { name: 'Customers', href: '/dashboard/customers' },
+    { name: 'Home', href: '/dashboard' },
+    { name: 'Invoices', href: '/dashboard/invoices' },
+    { name: 'Customers', href: '/dashboard/customers' },
 ];
 
 function DashboardNavButtons() {
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-  return (
-      <div className="mb-6 flex gap-4">
-        {navButtons.map((btn) => (
-            <Link
-                key={btn.name}
-                href={btn.href}
-                className={clsx(
-                    'rounded-md px-4 py-2 text-sm font-medium border',
-                    {
-                      'bg-blue-600 text-white border-blue-600': pathname === btn.href,
-                      'bg-white text-blue-600 border-blue-600 hover:bg-blue-50': pathname !== btn.href,
-                    }
-                )}
-            >
-              {btn.name}
-            </Link>
-        ))}
-      </div>
-  );
+    return (
+        <div className="mb-6 flex gap-4">
+            {navButtons.map((btn) => (
+                <Link
+                    key={btn.name}
+                    href={btn.href}
+                    className={clsx(
+                        'rounded-md px-4 py-2 text-sm font-medium border',
+                        {
+                            'bg-blue-600 text-white border-blue-600': pathname === btn.href,
+                            'bg-white text-blue-600 border-blue-600 hover:bg-blue-50': pathname !== btn.href,
+                        }
+                    )}
+                >
+                    {btn.name}
+                </Link>
+            ))}
+        </div>
+    );
 }
 
 export default function Page() {
-  return (
-      <main className="flex min-h-screen flex-col p-6">
-        <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-          <AcmeLogo />
-        </div>
-
-        {/* BOUTONS DE NAVIGATION */}
-        <DashboardNavButtons />
-
-        <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-          <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-
-            {/* Triangle noir en haut */}
-            <div className="relative w-0 h-0 border-l-[15px] border-r-[15px] border-b-[26px] border-l-transparent border-r-transparent border-b-black" />
-
-            <p className={`${lusitana.className} text-lg`}>
-              Ceci est un texte en Lusitana je crois.
-            </p>
-
-            <p className="text-gray-800 text-md">Customers Page</p>
-
-            <h1 className="text-blue-500">super texte bleu</h1>
-
-            <div>
-              <p
-                  className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
-              >
-                <strong>Welcome to Acme, et pas acné lol.</strong> This is the example for the{' '}
-                <a href="https://nextjs.org/learn/" className="text-blue-500">
-                  Next.js Learn Course
-                </a>
-                , brought to you by Vercel.
-              </p>
+    return (
+        <main className="flex min-h-screen flex-col p-6">
+            <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+                <AcmeLogo />
             </div>
 
-            <Link
-                href="/login"
-                className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-            >
-              <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-            </Link>
-          </div>
+            {/* BOUTONS DE NAVIGATION */}
+            <DashboardNavButtons />
 
-          <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-            <Image
-                src="/hero-desktop.png"
-                width={1000}
-                height={760}
-                alt="Screenshots of the dashboard project showing desktop version"
-                className="hidden md:block"
-            />
-            <Image
-                src="/hero-mobile.png"
-                width={560}
-                height={620}
-                alt="Screenshot of the dashboard project showing mobile version"
-                className="block md:hidden"
-            />
-          </div>
-        </div>
-      </main>
-  );
+            <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
+                <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+                    {/* Triangle noir en haut */}
+                    <div className="relative w-0 h-0 border-l-[15px] border-r-[15px] border-b-[26px] border-l-transparent border-r-transparent border-b-black" />
+
+                    <p className={`${lusitana.className} text-lg`}>
+                        Ceci est un texte en Lusitana je crois.
+                    </p>
+
+                    <p className="text-gray-800 text-md">Customers Page</p>
+
+                    <h1 className="text-blue-500">super texte bleu</h1>
+
+                    <div>
+                        <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
+                            <strong>Welcome to Acme, et pas acné lol.</strong> This is the example for the{' '}
+                            <a href="https://nextjs.org/learn/" className="text-blue-500">
+                                Next.js Learn Course
+                            </a>
+                            , brought to you by Vercel.
+                        </p>
+                    </div>
+
+                    <Link
+                        href="/login"
+                        className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+                    >
+                        <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
+                    </Link>
+                </div>
+
+                <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+                    <Image
+                        src="/hero-desktop.png"
+                        width={1000}
+                        height={760}
+                        alt="Screenshots of the dashboard project showing desktop version"
+                        className="hidden md:block"
+                    />
+                    <Image
+                        src="/hero-mobile.png"
+                        width={560}
+                        height={620}
+                        alt="Screenshot of the dashboard project showing mobile version"
+                        className="block md:hidden"
+                    />
+                </div>
+            </div>
+
+            {/* Section tableau de bord */}
+            <section className="mt-10">
+                <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+                    Dashboard
+                </h1>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
+                    {/* <Card title="Pending" value={totalPendingInvoices} type="pending" /> */}
+                    {/* <Card title="Total Invoices" value={numberOfInvoices} type="invoices" /> */}
+                    {/* <Card title="Total Customers" value={numberOfCustomers} type="customers" /> */}
+                </div>
+                <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+                    {/* <RevenueChart revenue={revenue} /> */}
+                    {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
+                </div>
+            </section>
+        </main>
+    );
 }
