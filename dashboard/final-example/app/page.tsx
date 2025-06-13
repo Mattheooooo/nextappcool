@@ -63,7 +63,7 @@ export default function Page() {
 
                     <p className="text-gray-800 text-md">Customers Page</p>
 
-                    <h1 className="text-blue-500">super texte bleu</h1>
+                    <h1 className="text-blue-500">super texte bleu YEEEHAAAA</h1>
 
                     <div>
                         <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
