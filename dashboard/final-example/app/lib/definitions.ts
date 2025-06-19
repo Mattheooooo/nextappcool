@@ -38,7 +38,7 @@ export type LatestInvoice = {
   email: string;
   amount: string;
   date: string;
-}; //commentaire useless 2 jpp push purée
+}; //commentaire useless 2 jpp push purée aaaaaaaaaaaaaaaaaaaa
 
 export type LatestInvoiceRaw = Omit<LatestInvoice, 'amount'> & {
   amount: number;
