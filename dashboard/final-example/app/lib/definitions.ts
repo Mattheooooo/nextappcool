@@ -38,7 +38,7 @@ export type LatestInvoice = {
   email: string;
   amount: string;
   date: string;
-}; //commentaire useless 2
+}; //commentaire useless 2 aaaaaaaaaaaaaaaaa
 
 export type LatestInvoiceRaw = Omit<LatestInvoice, 'amount'> & {
   amount: number;
