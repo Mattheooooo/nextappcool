@@ -8,8 +8,8 @@ export const formatCurrency = (amount: number) => {
 };
 
 export const formatDateToLocal = (
-  dateStr: string,
-  locale: string = 'en-US',
+    dateStr: string,
+    locale: string = 'en-US',
 ) => {
   const date = new Date(dateStr);
   const options: Intl.DateTimeFormatOptions = {
@@ -35,7 +35,14 @@ export const generateYAxis = (revenue: Revenue[]) => {
   return { yAxisLabels, topLabel };
 };
 
-export const generatePagination = (currentPage: number, totalPages: number) => {
+/**
+ * Returns an array of page numbers and ellipsis ('...') to use in pagination UI.
+ * The returned array can contain both numbers and string '...'.
+ */
+export const generatePagination = (
+    currentPage: number,
+    totalPages: number
+): (number | string)[] => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
   if (totalPages <= 7) {
